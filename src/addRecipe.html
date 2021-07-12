@@ -2,26 +2,44 @@
 <html>
 	<head>
 		<title>ADD RECIPE</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 	</head>
 	<body>
-		<button onclick="window.location.assign('index.html')" style="margin:5px 10px">Home</button>
-		<h1>Add recipe below</h1>
-		<label for="recipeTitle" style="margin:5px 10px">Recipe Title</label>
-		<br>
-		<input type="text" id="recipeTitle" style="margin:10px" placeholder="e.g. Jolof rice" required><br>
-		<label for="lastAddedIngredient" style="margin:5px 10px">Add Ingredients</label>
-		<br>
-		<input type="text" id="lastAddedIngredient" style="margin:10px" placeholder="e.g. Rice">
-		<br>
-		<p id="addedIngredients" style="margin:5px 10px; color: blue;"></p>
-		<button onclick="addIngredient()" style="margin:5px 10px">Add ingredient</button>
-		<br>
-		<label for="prepSteps" style="margin:5px 10px">Preparation steps</label>
-		<br>
-		<textarea id="prepSteps" style="margin:10px" rows="5" cols="50" placeholder="List the preparation steps" required></textarea>
-		<br>
-		<button onclick="addRecipe()" style="margin:5px 10px">Add recipe</button>
-		<button onclick="cancel()" style="margin:5px 10px">Cancel</button>	
+		<div class="container pt-3">
+			<button onclick="window.location.assign('index.html')" class="btn btn-outline-primary">Home</button>
+			<h1>Add recipe below</h1>
+			<div class="container p-3 my-3 border bg-light text-dark">
+				<div class="form-group">
+					<label for="recipeTitle"><h5>Recipe Title</h5></label>
+					<br>
+					<input type="text" id="recipeTitle" class="form-control" placeholder="e.g. Jolof rice" required><br>
+				</div>
+			</div>
+			<div class="container p-3 my-3 border bg-light text-dark">
+				<div class="form-group">
+					<label for="lastAddedIngredient"><h5>Add Ingredients</h5></label>
+					<br>
+					<input type="text" id="lastAddedIngredient" class="form-control" placeholder="e.g. Rice">
+				</div>
+				<br>
+				<p id="addedIngredients" style="color: blue;"></p>
+				<button onclick="addIngredient()" class="btn btn-outline-success">Add ingredient</button>
+				<br>
+			</div>
+			<div class="container p-3 my-3 border bg-light text-dark">
+				<div class="form-group">
+					<label for="prepSteps"><h5>Preparation steps</h5></label>
+					<br>
+					<textarea id="prepSteps" class="form-control" rows="5" placeholder="List the preparation steps" required></textarea>
+					<br>
+				</div>
+			</div>
+			<button onclick="addRecipe()" class="btn btn-outline-success" style="margin:5px 10px">Add recipe</button>
+			<button onclick="cancel()" class="btn btn-outline-dark" style="margin:5px 10px">Cancel</button>
+		</div>
 		<script>
 			let recipeTitle = "";
 			let ingredients = [];//Changed to let to enable reassignment
