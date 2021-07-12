@@ -3,9 +3,16 @@
 	<head>
 		<title>RECIPE - HOME</title>
 	</head>
-	<body>
+	<body onload="verifyStorage()">
 		<h1>Welcome to Mieye's kitchen</h1>
 		<button onclick="window.location.assign('addRecipe.html')" style="margin:10px">Add Recipe</button>
 		<button onclick="window.location.assign('viewRecipes.html')" style="margin:10px">View Recipe</button>
 	</body>
+	<script>
+		function verifyStorage(){
+			if (typeof(Storage) === "undefined") {
+				alert("Web storage is not supported");
+			}
+		}
+	</script>
 </html>
