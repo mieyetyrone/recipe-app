@@ -2,11 +2,17 @@
 <html>
 	<head>
 		<title>RECIPE - HOME</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 	</head>
 	<body onload="verifyStorage()">
-		<h1>Welcome to Mieye's kitchen</h1>
-		<button onclick="window.location.assign('addRecipe.html')" style="margin:10px">Add Recipe</button>
-		<button onclick="window.location.assign('viewRecipes.html')" style="margin:10px">View Recipe</button>
+		<div class="container pt-3">
+			<h1>Welcome to Mieye's kitchen</h1>
+			<button onclick="window.location.assign('addRecipe.html')" class="btn btn-outline-secondary" style="margin:10px">Add Recipe</button>
+			<button onclick="window.location.assign('viewRecipes.html')" class="btn btn-outline-secondary" style="margin:10px">View Recipe</button>
+		</div>
 	</body>
 	<script>
 		function verifyStorage(){
