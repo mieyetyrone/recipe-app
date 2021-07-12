@@ -13,13 +13,23 @@
 		<br>
 		<input type="text" id="lastAddedIngredient" style="margin:10px" placeholder="e.g. Rice">
 		<br>
-		<button style="margin:5px 10px">Add ingredient</button>
+		<p id="addedIngredients" style="margin:5px 10px; color: blue;"></p>
+		<button onclick="addIngredient()" style="margin:5px 10px">Add ingredient</button>
 		<br>
 		<label for="prepSteps" style="margin:5px 10px">Preparation steps</label>
 		<br>
 		<textarea id="prepSteps" style="margin:10px" rows="5" cols="50" placeholder="List the preparation steps" required></textarea>
 		<br>
 		<button style="margin:5px 10px">Add recipe</button>
-		<button style="margin:5px 10px">Cancel</button>							
+		<button style="margin:5px 10px">Cancel</button>	
+		<script>
+			const ingredients = [];
+			function addIngredient(){
+				let lastAdded = document.getElementById("lastAddedIngredient").value;
+				ingredients.push(lastAdded);
+				document.getElementById("addedIngredients").innerHTML = ingredients;
+				document.getElementById("lastAddedIngredient").value = "";
+			}
+		</script>
 	</body>
 </html>
