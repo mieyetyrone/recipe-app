@@ -21,10 +21,10 @@
 		<textarea id="prepSteps" style="margin:10px" rows="5" cols="50" placeholder="List the preparation steps" required></textarea>
 		<br>
 		<button onclick="addRecipe()" style="margin:5px 10px">Add recipe</button>
-		<button style="margin:5px 10px">Cancel</button>	
+		<button onclick="cancel()" style="margin:5px 10px">Cancel</button>	
 		<script>
 			let recipeTitle = "";
-			const ingredients = [];
+			let ingredients = [];//Changed to let to enable reassignment
 			let preparationSteps = "";
 
 			function addIngredient(){
@@ -87,6 +87,14 @@
 					document.getElementById("addedIngredients").innerHTML = "";
 					alert(recipeTitle + " has been added to the recipe list");
 				}
+			}
+			function cancel(){
+				recipeTitle = "";
+				ingredients = [];
+				preparationSteps = "";
+				document.getElementById("recipeTitle").value = "";
+				document.getElementById("prepSteps").value = "";
+				document.getElementById("addedIngredients").innerHTML = "";
 			}
 		</script>
 	</body>
