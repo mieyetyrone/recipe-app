@@ -5,20 +5,24 @@
 	</head>
 	<body>
 		<button onclick="window.location.assign('index.html')" style="margin:5px 10px">Home</button>
-		<h1>Our recipes are:</h1>
+		<h1 id="header">Our recipes are:</h1>
 		<p id="ingredients"></p>
 		<script>
 			let myRecipes = sessionStorage.getItem("recipeDB");
-			const myListOfRecipes = myRecipes.split(";");//I decided to keep the complete data(including ingredients and prep steps)
-
-			let mLen = myListOfRecipes.length;
-			let text = "<ol>";
-			for(let i in myListOfRecipes){
-				const myRecipeTitle = myListOfRecipes[i].split(":");
-				text += "<li style='margin:5px 10px'>" + myRecipeTitle[0] + "</li>";
+			if(myRecipes===null){
+				document.getElementById("header").innerHTML = "There are no recipes at the moment";
 			}
-			text += "</ol>";
-			document.getElementById("ingredients").innerHTML = text;
+			else{
+				const myListOfRecipes = myRecipes.split(";");//I decided to keep the complete data(including ingredients and prep steps)
+				let mLen = myListOfRecipes.length;
+				let text = "<ol>";
+				for(let i in myListOfRecipes){
+					const myRecipeTitle = myListOfRecipes[i].split(":");
+					text += "<li style='margin:5px 10px'>" + myRecipeTitle[0] + "</li>";
+				}
+				text += "</ol>";
+				document.getElementById("ingredients").innerHTML = text;	
+			}
 		</script>
 	</body>
 </html>
