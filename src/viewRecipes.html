@@ -2,11 +2,17 @@
 <html>
 	<head>
 		<title>VIEW RECIPE</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 	</head>
 	<body>
-		<button onclick="window.location.assign('index.html')" style="margin:5px 10px">Home</button>
-		<h1 id="header">Our recipes are:</h1>
-		<p id="ingredients"></p>
+		<div class="container pt-3">
+			<button onclick="window.location.assign('index.html')" class="btn btn-outline-primary">Home</button>
+			<h1 id="header">Our recipes are:</h1>
+			<p id="ingredients"></p>
+		</div>
 		<script>
 			let myRecipes = sessionStorage.getItem("recipeDB");
 			if(myRecipes===null){
@@ -15,12 +21,12 @@
 			else{
 				const myListOfRecipes = myRecipes.split(";");//I decided to keep the complete data(including ingredients and prep steps)
 				let mLen = myListOfRecipes.length;
-				let text = "<ol>";
+				let text = "<ul class='list-group'>";
 				for(let i in myListOfRecipes){
 					const myRecipeTitle = myListOfRecipes[i].split(":");
-					text += "<li style='margin:5px 10px'>" + myRecipeTitle[0] + "</li>";
+					text += "<li class='list-group-item'>" + myRecipeTitle[0] + "</li>";
 				}
-				text += "</ol>";
+				text += "</ul>";
 				document.getElementById("ingredients").innerHTML = text;	
 			}
 		</script>
