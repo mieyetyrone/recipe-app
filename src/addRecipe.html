@@ -95,6 +95,9 @@
 					if(myRecipeDB === null){
 						sessionStorage.setItem("recipeDB", recipeTitle + ":" + ingredients + ":" + preparationSteps);
 					}
+					/ *I decided to store not just the recipe title but also ingredients and preparation steps. 
+					It just seems logical to me even though the current app does not require the ingredients and preparation step.
+					A future solution might need those information */ 
 					else{
 						let myRecipes = sessionStorage.getItem("recipeDB");
 						myRecipes = myRecipes + ";" + recipeTitle + ":" + ingredients + ":" + preparationSteps;
