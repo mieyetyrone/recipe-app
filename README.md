@@ -1,2 +1,2 @@
 # recipe-app
-This recipe app allows user to add recipe information (recipe title, recipe ingredients and preparation steps). It also enables the users to retrieve the available recipes.
+This simple recipe app allows user to add recipe information (recipe title, recipe ingredients and preparation steps). It also enables the users to retrieve the available recipes. The "ADD RECIPE" page contains a section for adding ingredients. Ingredients should be inserted one after the other, then click the "Add ingredient" button after each input. Please note that this app uses the session storage as its storage. This may lead to unexpected behaviour if session storage is not supported.
